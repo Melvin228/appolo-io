@@ -1,10 +1,15 @@
 import React from "react";
 import Header from "../Header";
 
-const Layout = () => {
+type Props = {
+  children: JSX.Element
+}
+
+const Layout = ({ children }: Props) => {
   return (
     <div>
       <Header />
+      {children}
     </div>
   );
 };
