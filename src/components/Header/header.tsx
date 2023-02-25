@@ -1,15 +1,17 @@
+import AbcIcon from "@mui/icons-material/Abc";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import MenuIcon from "@mui/icons-material/Menu";
+import CachedIcon from "@mui/icons-material/Cached";
+import HomeIcon from "@mui/icons-material/Home";
+import SearchIcon from "@mui/icons-material/Search";
+import SendIcon from "@mui/icons-material/Send";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormGroup from "@mui/material/FormGroup";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import Switch from "@mui/material/Switch";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import React from "react";
 
 const Header = () => {
@@ -30,34 +32,79 @@ const Header = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <FormGroup>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={auth}
-              onChange={handleChange}
-              aria-label="login switch"
-            />
-          }
-          label={auth ? "Logout" : "Login"}
-        />
-      </FormGroup>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar
+          sx={{ backgroundColor: "#fff", boxShadow: " 0 1px 0.1px 0.2px" }}
+        >
           <IconButton
             size="large"
             edge="start"
-            color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            <AbcIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Photos
-          </Typography>
+          <Grid container>
+            <Grid
+              item
+              sx={{ mr: 1 }}
+              gridTemplateColumns={"1fr fit-content(40%)"}
+            >
+              <Button
+                variant="outlined"
+                sx={{
+                  border: 0,
+                  color: "#000",
+                  "&:hover": { backgroundColor: "#f8f9fb", border: 0 },
+                }}
+                startIcon={<HomeIcon />}
+              >
+                Home
+              </Button>
+            </Grid>
+            <Grid item sx={{ mr: 1 }}>
+              <Button
+                variant="outlined"
+                sx={{
+                  border: 0,
+                  color: "#000",
+                  "&:hover": { backgroundColor: "#f8f9fb", border: 0 },
+                }}
+                startIcon={<SearchIcon />}
+              >
+                Search
+              </Button>
+            </Grid>
+            <Grid item sx={{ mr: 1 }}>
+              <Button
+                variant="outlined"
+                sx={{
+                  border: 0,
+                  color: "#000",
+                  "&:hover": { backgroundColor: "#f8f9fb", border: 0 },
+                }}
+                startIcon={<SendIcon />}
+              >
+                Engage
+              </Button>
+            </Grid>
+            <Grid item sx={{ mr: 1 }}>
+              <Button
+                variant="outlined"
+                sx={{
+                  border: 0,
+                  color: "#000",
+                  "&:hover": { backgroundColor: "#f8f9fb", border: 0 },
+                }}
+                startIcon={<CachedIcon />}
+              >
+                Enrich
+              </Button>
+            </Grid>
+          </Grid>
           {auth && (
-            <div>
+            <Box sx={{ flexGrow: 1 }}>
+              <Button>Upgrade</Button>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -71,6 +118,7 @@ const Header = () => {
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
+                sx={{ color: "#000" }}
                 anchorOrigin={{
                   vertical: "top",
                   horizontal: "right",
@@ -83,10 +131,12 @@ const Header = () => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose} sx={{ color: "black" }}>
+                  Profile
+                </MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
               </Menu>
-            </div>
+            </Box>
           )}
         </Toolbar>
       </AppBar>
