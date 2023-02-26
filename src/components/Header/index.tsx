@@ -40,7 +40,7 @@ const Header = () => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar
           sx={{ backgroundColor: "#fff", boxShadow: " 0 1px 0.1px 0.2px" }}
         >

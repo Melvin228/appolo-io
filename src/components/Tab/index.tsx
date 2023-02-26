@@ -59,7 +59,9 @@ const CustomTab = ({ children }: CustomTabProps) => {
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-                {children}
+                <Box sx={{ display: "flex" }}>
+                    {children}
+                </Box>
             </TabPanel>
             <TabPanel value={value} index={1}>
                 {children}
