@@ -202,7 +202,9 @@ export default function Sidebar({ children }: SidebarProps) {
               <ListItemText primary="Lists" />
               {openList ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
+
             <CollapsedComponent openList={openList} />
+            <Divider />
             <ListItemButton onClick={handleCompanyClick}>
               <ListItemIcon>
                 <BusinessIcon />
@@ -211,6 +213,7 @@ export default function Sidebar({ children }: SidebarProps) {
               {openCompany ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
             <FilteredCompanyBox openList={openCompany} />
+            <Divider />
             <ListItemButton onClick={handleEmployeesClick}>
               <ListItemIcon>
                 <PeopleOutlineIcon />
@@ -219,6 +222,7 @@ export default function Sidebar({ children }: SidebarProps) {
               {openEmployees ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
             <CollapsedComponent openList={openEmployees} />
+            <Divider />
             <ListItemButton onClick={handleFactoryClick}>
               <ListItemIcon>
                 <FactoryIcon />
@@ -227,6 +231,7 @@ export default function Sidebar({ children }: SidebarProps) {
               {openFactory ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
             <CollapsedComponent openList={openFactory} />
+            <Divider />
             <ListItemButton onClick={handleBuyClick}>
               <ListItemIcon>
                 <AssessmentIcon />
@@ -235,6 +240,7 @@ export default function Sidebar({ children }: SidebarProps) {
               {openBuy ? <ExpandLess /> : <ExpandMore />}
             </ListItemButton>
             <CollapsedComponent openList={openBuy} />
+            <Divider />
           </List>
         </Box>
       </Drawer>
