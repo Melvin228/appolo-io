@@ -174,8 +174,8 @@ export default function Sidebar({ children }: SidebarProps) {
         variant="permanent"
         PaperProps={{
           sx: {
-            top: 137,
-            height: "calc(100% - 137px)",
+            top: 136,
+            height: "calc(100% - 136px)",
           },
         }}
         sx={{
