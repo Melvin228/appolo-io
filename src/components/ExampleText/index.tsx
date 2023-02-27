@@ -1,7 +1,7 @@
 import { Box, Toolbar, Typography } from "@mui/material";
 import React from "react";
 
-const DataGrid = () => {
+const ExampleText = () => {
   return (
     <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
       <Toolbar />
@@ -37,4 +37,4 @@ const DataGrid = () => {
   );
 };
 
-export default DataGrid;
+export default ExampleText;

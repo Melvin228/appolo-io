@@ -1,17 +1,15 @@
 import React from "react";
+import "./App.css";
 import Layout from "./components/Layout";
-import "./App.css"
-import CustomTab from "./components/Tab";
 import Sidebar from "./components/Sidebar";
-import DataGrid from "./components/DataGrid";
+import CustomTab from "./components/Tab";
 
 function App() {
   return (
     <div className="App">
       <Layout>
         <CustomTab>
-          <Sidebar />
-          <DataGrid />
+          <Sidebar></Sidebar>
         </CustomTab>
       </Layout>
     </div>
