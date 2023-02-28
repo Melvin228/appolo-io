@@ -2,8 +2,9 @@ import BusinessIcon from "@mui/icons-material/Business";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import PeopleIcon from "@mui/icons-material/People";
 import SavedSearchIcon from "@mui/icons-material/SavedSearch";
-import { Box, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Tab, Tabs, Toolbar, Typography } from "@mui/material";
 import React from "react";
+import { a11yProps } from "../../services/utils/tabFunction";
 import ExampleText from "../ExampleText";
 import Sidebar from "../Sidebar";
 
@@ -33,12 +34,6 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
 interface CustomTabProps {
   children: React.ReactNode;
 }
@@ -52,7 +47,13 @@ const CustomTab = ({ children }: CustomTabProps) => {
 
   return (
     <>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Toolbar />
+      <Box
+        sx={{
+          borderBottom: 1,
+          borderColor: "divider",
+        }}
+      >
         <Tabs
           value={value}
           onChange={handleChange}

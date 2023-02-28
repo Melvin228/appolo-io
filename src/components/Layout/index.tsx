@@ -2,8 +2,8 @@ import React from "react";
 import Header from "../Header";
 
 type Props = {
-  children: JSX.Element
-}
+  children: React.ReactNode;
+};
 
 const Layout = ({ children }: Props) => {
   return (

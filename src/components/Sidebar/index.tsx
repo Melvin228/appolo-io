@@ -29,7 +29,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import * as React from "react";
 
-const drawerWidth = 320;
+export const drawerWidth = 320;
 
 interface collapsedComponentProps {
   openList: boolean;
@@ -141,6 +141,8 @@ interface SidebarProps {
   children?: React.ReactNode;
 }
 
+const topGap = 136;
+
 export default function Sidebar({ children }: SidebarProps) {
   const [openList, setOpenList] = React.useState(false);
   const [openCompany, setOpenCompany] = React.useState(false);
@@ -174,12 +176,12 @@ export default function Sidebar({ children }: SidebarProps) {
         variant="permanent"
         PaperProps={{
           sx: {
-            top: 136,
-            height: "calc(100% - 136px)",
+            top: topGap,
+            height: `calc(100% - ${topGap}px)`,
           },
         }}
         sx={{
-          width: drawerWidth,
+          width: drawerWidth - 20,
           flexShrink: 0,
 
           [`& .MuiDrawer-paper`]: {

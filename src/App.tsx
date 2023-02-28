@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import DataGrid from "./components/DataGrid";
 import Layout from "./components/Layout";
 import Sidebar from "./components/Sidebar";
 import CustomTab from "./components/Tab";
@@ -9,7 +10,8 @@ function App() {
     <div className="App">
       <Layout>
         <CustomTab>
-          <Sidebar></Sidebar>
+          <Sidebar />
+          <DataGrid />
         </CustomTab>
       </Layout>
     </div>
